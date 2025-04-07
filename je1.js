@@ -123,4 +123,13 @@ const person = [
     }
 ]
 
-console.log(person);
+
+let persona1 = {
+    nombre: "Lorena",
+    ciudad: "Tarija",
+    correo :"lorena@gmail.com",
+    telefono : 79700045,
+    direccion: "San lorenzo"
+}
+console.log(person[person.length-1]);
+
