@@ -1,15 +1,14 @@
 // alcance o scope
 let paisA = "Bolivia"
+// {
+//     let depto1 = "La Paz";
+//     let depto2 = "Cochabamba";
+//     let depto3 = "Santa Cruz";
+//     console.log(depto1);
+//     console.log(paisA);  
+// }
 
-{
-    var depto1 = "La Paz";
-    let depto2 = "Cochabamba";
-    let depto3 = "Santa Cruz";
-    console.log(depto1);
-    
-}
-
-console.log(paisA);
+// console.log(paisA);
 
 let paisB = "Argentina"
 
@@ -18,7 +17,7 @@ let paisB = "Argentina"
     let depto2 = "Rosario";
     let depto3 = "Cordova";
     console.log(depto2)
-
+    console.log(paisA);
    
 }
 console.log(paisB);
@@ -41,8 +40,8 @@ nombreR= nombreR.slice(1,3)
 console.log(nombreR)
 
 //split
-let textFruta = "banana naranja papaya manzana"
-let arrayFrutas = textFruta.split(" ");
+let textFruta = "banana,naranja,papaya,manzana"
+let arrayFrutas = textFruta.split(",");
 console.log(textFruta);
 console.log(arrayFrutas);
 
@@ -72,13 +71,9 @@ console.log(bandera);
  let dias = ["lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"];
  let arreglo = [110, "Carlos", true, [1,2,3]];
  const mascotas = ["🐕","🐱","🐒",["🍗","🐟","🍌"]];
- console.log(mascotas[0]);
- console.log(mascotas[3][0]);
- 
- console.log(dias[0]);
- console.log(dias[6]);
- console.log(arreglo[3][0]);
- 
+ mascotas[4] = "🐢"
+ console.log(mascotas);
+ console.log(mascotas[3].length)
  // lenght
 let nombre = "Juan";
 size = nombre.length;
@@ -97,13 +92,35 @@ console.log(nombres.indexOf("Gary")); // -1
 
 // push pop shift unshift
 let nombres = ["Ana","Bob","Adan","Cony", "Elena"];
-nombre = nombres.pop();
+nombre = nombres.shift();
 console.log(nombres); 
+
+
 let persona = {
     nombre: "Carlos",
-    sexo: "Hombre",
+    ciudad: "Cochabamba",
     correo : "carlos@gmail.com",
-    telefono : 70745689
+    telefono : 70745689,
+    direccion: "shinahota"
 }
 
 console.log(persona.nombre);
+
+const person = [
+    {
+        nombre: "Carlos",
+        ciudad: "Cochabamba",
+        correo : "carlos@gmail.com",
+        telefono : 70745689,
+        direccion: "shinahota"
+    },
+    {
+        nombre: "Rodrigo",
+        ciudad: "Cochabamba",
+        correo : "rodrigo@gmail.com",
+        telefono : 7971245,
+        direccion: "Chimore"
+    }
+]
+
+console.log(person);
