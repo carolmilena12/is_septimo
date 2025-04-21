@@ -17,12 +17,15 @@ do {
     contador1++
 } while (contador1<=5)
 
-let persona = {nombre: "Juan", edad: "20", ciudad:"Cochabamba"}
+    // for ....in  se utiliza para recorer objetos
+
+let persona = {nombre: "Juan", edad: "20", ciudad:"Cochabamba", materia: "analisis"}
 
 for (let propiedad in persona) {
-    console.log(`${propiedad}: ${persona[propiedad]}`);
+    console.log(propiedad, persona[propiedad]);
 }
 
+// for ...of  esto es para recorrer los arreglos
 let colores = ["rojo","verde","azul","blanco"];
 
 for (let color of colores){
@@ -33,6 +36,7 @@ for (let i=1; i<20; i++){
     if (i===10)break;
     if (i%2===0)continue;
     console.log("numero impar es: " + i);
+    console.log("no es par")
 }
 
 let numbers= [4, 6, 7, 8, 9, 10, 25];
@@ -40,12 +44,14 @@ let numbers= [4, 6, 7, 8, 9, 10, 25];
 console.log(numbers.reverse());
 
 
-// console.log(numbers.length) // muestra el numero de elementos del arreglo
-// console.log(numbers[numbers.length-1])  // muestra el ultimo elemeto de mi arreglo
+console.log(numbers.length) // muestra el numero de elementos del arreglo
+console.log(numbers[numbers.length-1])  // muestra el ultimo elemeto de mi arreglo
 
 // for (let i= numbers.length-1; i >=0 ; i--){
 //     console.log(numbers[i])
 // }
+
+console.log(numbers.reverse());
 
 //COMBINACION ENTRE BUCLES Y CONDICIONALES
 
@@ -65,12 +71,14 @@ function saludar(){
 }
 saludar();
 
+
+
 // funcion con parametros y argumentos
 function sumar(a,b){
     return a+b;
 }
-let resultado = sumar(6,8);
-console.log(resultado)
+
+console.log(sumar(5,20))
 
 function restar(a,b){
     return a-b;
@@ -78,27 +86,29 @@ function restar(a,b){
 
 console.log(restar(10,3));
 
-//Funciones que no retornan nada VOID
+//Funciones que nsumaro retornan nada VOID
 function imprimir(mensaje){
     console.log(`El mensaje es: ${mensaje}`);
 }
 imprimir("Estamos en clases de JavaScript")
 
 // valors por defecto
-function saludar_Persona(nombre = "Carlos"){
-    console.log("Hola " + nombre)
+function saludar_Persona(nombre ="Carlos"){
+    return "hola" + nombre;
     }
-saludar_Persona()
+
+console.log(saludar_Persona());
 
 // ejecutar varias veces
-function saludarPersona(nombre){
-    console.log("Hola " + nombre)
-    }
 saludarPersona("Ana");
+
 saludarPersona("Jorge");
 saludarPersona("Pamela");
 saludarPersona("Sonia");
 saludarPersona("Dilma");
+function saludarPersona(nombre){
+    console.log("Hola " + nombre)
+    }
 
 function potencia(numero, exponente){
     return numero**exponente;
@@ -111,7 +121,7 @@ console.log(potencia(3,2));
 function cuadrado(num){
     return num*num;
 }
-//console.log(cuadrado(2));
+
 
 function cubo(num){
     return cuadrado(num)*num;
@@ -124,13 +134,19 @@ function calcular_area(base=5, altura=2){
     let area = base *altura;
     return area;
 }
+calcular_area()
 
-console.log(calcular_area());
+function mostrarfruta(a,b,c){
+       return [a,b,c];
+}
+console.log(mostrarfruta("🍎","🍇","🍊"));
+
+
+
 
 //retorno
 function mostrarNombres(nombre1,nombre2){
-    return nombre1,nombre2;
-    
+    return [nombre1, nombre2];    
 }
 
 console.log(mostrarNombres("Juan","Maria"))
@@ -143,31 +159,45 @@ function dividirNumeros(a,b){
     return a/b;
 }
 
-console.log(dividirNumeros(9,0));
+//console.log(dividirNumeros(9,0));
 console.log(dividirNumeros(9,3));
 
-function sumar(a,b){
-    if (typeof(a) !== "number" || typeof(b) !== "number"){
-        return "ERROR. Ingrese solo numeros!!";
+function saludoAmigo(a,b){
+    if (typeof(a) !== "string" || typeof(b) !== "string"){
+        return "Ingrese nombres no numeros!!";
     }
-    return a-b;
+    return `${a} saluda a ${b}`;
 }
 
-console.log(sumar(15,"cinco"));
+console.log(saludoAmigo("Juan",20));
+
+
 
 //funciones flecha () => {}
 
-function name1(params) {
-    
+function saludar2(params) {
+    console.log("hola soy unafuncion clasica o normal")
 }
 name1()
 
-const flecha = ()=> {console.log("Hola, soy una funcion flecha")};
+const suma = (a,b)=>a+b;
+console.log(suma(1,7)) ;
+
+const flecha = ()=>console.log("Hola, soy una funcion flecha");
 flecha();
+
+const doble = (n) => n * 2;
+console.log(doble(4));
+
 
 function cuadrado(numero) {
     return numero*numero
 }
+
+const cuadrado = (numero)=>numero*numero;
+
+
+
 console.log(cuadrado(5));
 
 function doble(x) {
@@ -187,7 +217,11 @@ function dividirDosNumeros(x,y) {
     return x/y;
 }
 
+const dividir2 = (a, b) => a/b;
+console.log(dividir2(100, 2));
 //CALLBACKS
+
+
 
 function procesarDato(number, callback){
     console.log("Procesando numero" , number);
