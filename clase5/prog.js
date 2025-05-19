@@ -1,49 +1,51 @@
+//DESESTRUCTURACION
 // tenemos un array con un nombre y apellido
 let arr = ["John", "Smith"]
 
-// asignación desestructurante
-// fija firstName = arr[0]
-// y surname = arr[1]
-let [firstName, surname] = arr;
+//asignación desestructurante
+// let firstName = arr[0];
+// let surname = arr[1]
 
-console.log(firstName);
-console.log(surname);
+let [nombre, apellido] = arr;
+console.log(nombre);
 
-let numeros = [1, 2, 3];
-let [num1,num2,num3] = numeros;
-console.log(num1,num2,num3);
+
+let numeros = [8, 15, 56];
+let [num3,num2,num1] = numeros;
+console.log(num3, num2,num1);
 
 let personas = ["Juan","Maria","Carlos","Roman"];
-let [person1,, person3, person4] = personas;
-console.log(person3)
-
-
+let [n1,,n2,n3] = personas;
+console.log(n3,n2,n1);
 
 const ciudades=[["La Paz","Tarija","Oruro"],["Lima","Puno","Arequipa"]];
-const [Bolivia,Peru] = ciudades;
 
-console.log(Peru)
+const [Bolivia,Peru] = ciudades;
 const [ciudad1,ciudad2,ciudad3]= Bolivia;
 const [dep1,dep2,dep3]= Peru;
- console.log(dep2,ciudad1);
+ console.log(dep2);
 
  let numPares = [2,4,6,8]
  let copiaPares = numPares;
 
  console.log(copiaPares);
  copiaPares.push(12);
+ console.log(copiaPares);
+ console.log(numPares)
 
  console.log(pares)
 
-  // DESESTRUCTURACION DUANTE LA ITERACION
-  let paises = [["Bolivia","Oruro"],["Chile","Santiago"],["Peru","Lima"]];
-//   let [primero, segundo,tercero]=paises;
-//   let [p1,c1]=primero;
-//   let [p2,c2]=segundo;
-//   let [p3,c3]=tercero;
-//   console.log(`Pais: ${p1} --> ciudad: ${c1}`)
-//   console.log(`Pais: ${p2} --> ciudad: ${c2}`)
-//   console.log(`Pais: ${p3} --> ciudad: ${c3}`)
+  // DESESTRUCTURACION DURANTE LA ITERACION
+  let paises = [["Bolivia","Oruro"],["Chile","Santiago"],["Peru","Lima"],["Brasil","Sao Paulo"]];
+  let [primero, segundo,tercero,cuarto]=paises;
+  let [p1,c1]=primero;
+  let [p2,c2]=segundo;
+  let [p3,c3]=tercero;
+  let [p4,c4]=cuarto;
+  console.log(`Pais: ${p1} --> ciudad: ${c1}`)
+  console.log(`Pais: ${p2} --> ciudad: ${c2}`)
+  console.log(`Pais: ${p3} --> ciudad: ${c3}`)
+  console.log(`Pais: ${p4} --> ciudad: ${c4}`)
 
   for (const [pais,ciudad] of paises){
     console.log(`Pais: ${pais} -- ciudad: ${ciudad}`)
@@ -52,8 +54,8 @@ const [dep1,dep2,dep3]= Peru;
   //Desestruturaion de objetos 
 
 const rectangulo = {altura:"20", base:"10", area:"200"};
-let {altura,base,area} = rectangulo;
-console.log(altura, base, area);
+let {base,area,altura,perimetro=60} = rectangulo;
+console.log(base,area,altura,perimetro);
 
  // Si la clave no se encueenta en el objeto la variable se le asignara indefenido
  // En ocasiones la clave podria no estar en el objeto en ese caso podemos asignar un valor predeterminado durante la declaracion
@@ -61,61 +63,67 @@ console.log(altura, base, area);
  //let {altura, base, area, perimetro=60} = rectangulo;
 
  // Desestructuracion de ibjetos durante la iteracion
-const planExamen = [
+const cArros = [
     {
-    tarea:"Preparar Examen",
-    hora:"8:00",
-    estado:false
+    id:1,
+    marca:"8:0suski0",
+    modelo: "2020"
     },
     {
-        tarea:"Realizar Examen",
-        hora:"14:00",
-        estado:false
+    id:1,
+    marca:"hiundai",
+    modelo: "2020"
     },
-    {
-        tarea:"Evaluar Examen",
-        hora:"18:00",
-        estado:false
-    },
+   {
+    id:1,
+    marca:"8:00toyota",
+    modelo: "2020"
+    }
+  ]
 
-]
-
-for (const {tarea, hora, estado} of planExamen){
-    console.log(tarea, hora, estado);
+for (const {id, marca, modelo} of cArros){
+    console.log(id, marca, modelo);
 }
 
+const pares=[0,2,4,6,8,10]
 
-//PROPAGACION ...
-// let a, b, rest;
-// [a, b] = [10, 20];
+const impares=[1,3,5,7,9]
 
-// console.log(a);
-// console.log(b);
+  const paresCopia= [...pares]
+  paresCopia.push(12)
+  console.log(paresCopia);
+  console.log(pares)
+  const imparesCopia= [...impares]
+  imparesCopia.push(11)
+  console.log(imparesCopia);
+  console.log(imparesCopia);
+  console.log(pares);
+  console.log(impares);
 
-// [a, b, ...rest] = [10, 20, 30, 40, 50];
-// console.log(rest);
+//PROPAGACION ... spread operator
+let a, b, restante;
+[a, b] = [10, 20];
+
+[a, b, ...restante] = [10, 20, 30, 40, 50];
+console.log(restante);
 
 //? Arreglos
 
 
 const nums=[1,2,3,4,5,6,7,8,9,10]
-let [nu1,nu2,nu3,...rest]=nums
-console.log(nu1,nu2,nu3,rest);
+let [nu1,nu2,nu3,...otros]=nums
+console.log(nu1,nu2,nu3,otros);
 
 const pares=[0,2,4,6,8,10]
 const impares=[1,3,5,7,9]
-//   const paresCopia= [...pares]
-//   paresCopia.push(12)
-//   console.log(paresCopia);
-//   const imparesCopia= [...impares]
-//   imparesCopia.push(11)
-//   console.log(imparesCopia);
-  // console.log(imparesCopia);
-  // console.log(pares);
-  // console.log(impares);
-
   const todos= [...pares, ...impares]
   console.log(todos);
+
+
+  let nombres = ["ana","ema", "alex", "rosa"]
+  let nombrescopia = [...nombres]
+  nombrescopia.push("Arandia");
+  console.log(nombres);
   
   // Objetos
   const usuario={
@@ -128,6 +136,20 @@ const impares=[1,3,5,7,9]
   usuarioCopia.telefono='123123'
   console.log(usuarioCopia);
   console.log(usuario);
+
+let lenguajes= [["React","Xpress","Node"],["MongoDB","MySQL","Postgres"]];
+for (const [l1,l2,l3] of lenguajes) {
+  console.log( `lenguaje: ${l1} ${l2}` );
+}
+
+let carros= [["React","Xpress","Node"],;
+for (const [l1,l2,l3] of lenguajes) {
+  console.log( `lenguaje: ${l1} ${l2}` );
+}
+
+let materias = ["analisis", "ia", "redes"]
+
+
 
 /*                                               EJERCICIOS
 ==========================================================================================================================
